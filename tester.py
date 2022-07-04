@@ -5,8 +5,8 @@ def main():
     b =5
 
     c = a+ b
-    d=a + 1
-    print(d)
+    # d=a + 1
+    # print(d)
 
     print(c)
 
