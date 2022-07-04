@@ -1,0 +1,17 @@
+on: [pull_request, push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: grantmcconnaughey/lintly-flake8-github-action@v1.0
+        with:
+          # The GitHub API token to create reviews with
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # Fail if "new" violations detected or "any", default "new"
+          failIf: new
+          # Additional arguments to pass to flake8, default "." (current directory)
+          args: "--ignore=E115,E116, E117, E121, E126, E127, E128, E203, E225, E226, E231,
+            E241, E251, E261, E265, E302, E303, E305, E402, E501, E741, W291, W292, W293, W391, W503,
+            W503, W504, F403, B007, B950, F401, E731, F405. --max-line-length=120"
