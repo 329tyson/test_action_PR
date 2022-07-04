@@ -5,9 +5,10 @@ def main():
     b =5
 
     c = a+ b
-    # d=a + 1
+    d=a + 1
 
     print(c)
+    print(d)
 
     li = False
     if li == True:
